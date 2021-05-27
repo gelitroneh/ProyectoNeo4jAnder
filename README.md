@@ -11,6 +11,8 @@ Para el despliegue del proyecto se ha utilizado docker pero si se desea correr s
 
 2-Situarte con la terminal en la carpeta de proyecto
 
+3-Ejecutar el comando "docker-compose build"
+
 3-Ejecutar el comando "docker compose up"
 
 4-Los puertos son los siguientes:
