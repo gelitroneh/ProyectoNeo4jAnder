@@ -30,7 +30,7 @@ Para el despliegue del proyecto se ha utilizado docker pero si se desea correr s
 
 2-Abrir el proyecto en una terminal
 
-3-Ejecutar el comando "npm install" para intstalar las dependencias 
+3-Ejecutar el comando "npm install" para instalar las dependencias 
 
 4-Comentar las lineas:
 
