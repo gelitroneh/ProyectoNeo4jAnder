@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <!--CSS-->
+        <link rel="stylesheet" href="CSS/main.css">
+        <%- include('./partials/head'); %>
+</head>
+
+<body class="container" > 
+    <style>
+        body{
+            background: rgb(58,180,97);
+            background: linear-gradient(90deg, rgba(58,180,97,1) 0%, rgba(29,150,253,1) 50%, rgba(252,176,69,1) 100%);
+        }
+    </style> 
+
+<header>
+    <%- include('./partials/header'); %>
+</header>
+
+<!--Codigo que muestra los bloques de texto y el boton de submit-->
+<div class="crear" style="float: left;">
+    <br>
+    <h3>Añade pais</h3>
+    <form method="post" action="/pais/add">
+        <label>Pais</label>
+        <br>
+        <input type="text" name="nombreP">
+        <br>
+        <label>Bandera(url)</label>
+        <br>
+        <input type="text" name="imagenP">
+        <br><br>
+        <input type="submit" value="Añadir">
+        <br>
+    </form>
+    <br>
+    <h3>Añade fauna</h3>
+    <form method="post" action="/fauna/add">
+        <label>Animal</label>
+        <br>
+        <input type="text" name="nombreA">
+        <br>
+        <label>Imagen(url)</label>
+        <br>
+        <input type="text" name="imagenA">
+        <br><br>
+        <input type="submit" value="Añadir">
+        <br>
+    </form>
+    <br>
+    <h3>Añade Flora</h3>
+    <form method ="post" action="/flora/add">
+        <label>Planta</label>
+        <br>
+        <input type="text" name="nombreF">
+        <br>
+        <label>Imagen(url)</label>
+        <br>
+        <input type="text" name="imagenF">
+        <br><br>
+        <input type="submit" value="Añadir">
+    </form>
+    <!--Creacion de relaciones-->
+    <br>
+    <h3>Relaciona un animal con su pais</h3>
+    <form method="post" action="/fauna/pais/add">
+        <label>Pais</label><br>
+        <input type="text" name="nombreP">
+        <br>
+        <label>Animal</label><br>
+        <input type="text" name="nombreA">
+        <br><br>
+        <input type="submit" value="Relacionar">
+        <br>
+    </form>
+    <br>
+    <h3>Relaciona una planta con su pais</h3>
+    <form method="post" action="/flora/pais/add">
+        <label>Pais</label><br>
+        <input type="text" name="nombreP">
+        <br>
+        <label>Planta</label><br>
+        <input type="text" name="nombreF">
+        <br><br>
+        <input type="submit" value="Relacionar">
+        <br>
+    </form>
+    <br>
+    <h3>Relaciona un pais a su continente</h3>
+    <form method="post" action="/pais/continente/add">
+        <label>Continente</label><br>
+        <input type="text" name="nombreC">
+        <br>
+        <label>Pais</label><br>
+        <input type="text" name="nombreP">
+        <br><br>
+        <input type="submit" value="Relacionar">
+        <br>
+    </form>
+    <br>
+</div>
+
+<!--Borrar nodos-->
+<div class="borrar" style="float:right;">
+    <br>
+    <h3>Borrar un pais</h3>
+    <form method="post" action="/pais/delete">
+        <label>Pais</label><br>
+        <input type="text" name="nombreP">
+        <input type="submit" value="Borrar">
+        <br>
+    </form>
+    <br>
+    <h3>Borrar un animal</h3>
+    <form method="post" action="/fauna/delete">
+        <label>Animal</label><br>
+        <input type="text" name="nombreA">
+        <input type="submit" value="Borrar">
+        <br>
+    </form>
+    <br>
+    <h3>Borrar una planta</h3>
+    <form method="post" action="/flora/delete">
+        <label>Planta</label><br>
+        <input type="text" name="nombreF">
+        <input type="submit" value="Borrar">
+        <br>
+    </form>
+    <br>
+
+    <!--Borrar relaciones-->
+    <h3>Borrar la relacion pais-animal</h3>
+    <form method="post" action="/fauna/pais/delete">
+        <label>Pais</label><br>
+        <input type="text" name="nombreP">
+        <br>
+        <label>Animal</label><br>
+        <input type="text" name="nombreA">
+        <br><br>
+        <input type="submit" value="Borrar">
+        <br>
+    </form>
+    <br>
+    <h3>Borrar la relacion pais-planta</h3>
+    <form method="post" action="/flora/pais/delete">
+        <label>Pais</label><br>
+        <input type="text" name="nombreP">
+        <br>
+        <label>Planta</label><br>
+        <input type="text" name="nombreF">
+        <br><br>
+        <input type="submit" value="Borrar">
+        <br>
+    </form>
+    <br>
+    <h3>Borrar la relacion continente-pais</h3>
+    <form method="post" action="/pais/continente/delete">
+        <label>Continente</label><br>
+        <input type="text" name="nombreC">
+        <br>
+        <label>Pais</label><br>
+        <input type="text" name="nombreP">
+        <br><br>
+        <input type="submit" value="Borrar">
+        <br>
+    </form>
+</div> 
+

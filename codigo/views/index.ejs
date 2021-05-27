@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+    <!--CSS-->
+    <link rel="stylesheet" href="CSS/main.css">
+    <%- include('./partials/head'); %>
+</head>
+<body class="container" >
+        <style>
+            body{
+                background: rgb(58,180,97);
+                background: linear-gradient(90deg, rgba(58,180,97,1) 0%, rgba(29,150,253,1) 50%, rgba(252,176,69,1) 100%);
+            }
+        </style> 
+   
+<header>
+    <%- include('./partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron"  style="text-align: center;">
+        <h1 class="display-4">Conoce tu ecosistema</h1>
+        <p class="lead">Un tigre,una rosa o un leon. ¿Conoces todo sobre los seres vivos que te rodean? Conocelo aqui</p>
+        <hr class="my-4">
+        <p>Puedes visitar la pagina oficial de Neo4j para obtener toda la informacion sobre la base de datos que sostiene este sistema</p>
+        <p class="lead">
+            <a href="https://neo4j.com/" class="btn btn-info btn">Neo4j</a>
+        </p>
+      </div>
+</main>
+
+<footer>
+    <%- include('./partials/footer'); %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <!--CSS-->
+        <link rel="stylesheet" href="CSS/main.css">
+        <%- include('./partials/head'); %>
+ </head>
+
+ <body class="container"> 
+    <style>
+        body{
+            background: rgb(58,180,97);
+            background: linear-gradient(90deg, rgba(58,180,97,1) 0%, rgba(29,150,253,1) 50%, rgba(252,176,69,1) 100%);
+        }
+    </style> 
+<header>
+    <%- include('./partials/header'); %>
+</header>
+<body>
+<!--Codigo que muestra el contenido de la base de datos--> 
+<div class = "ubicaciones" style="float: left;">
+    <h1>Continentes</h1>
+        <ol>
+            <% continentes.forEach(function(continente){ %>
+                <li style="font-size: large;">
+                    <%= continente.nombreC %>
+                    <br>
+                    <img  src="<%= continente.imagenC%>"  width="300" height="200">
+                    <br><br>
+                </li>
+            <% }) %>
+        </ol>
+    <h1>Paises</h1>
+        <ol>
+            <% paises.forEach(function(pais){ %>
+                <li style="font-size: large;">
+                    <%= pais.nombreP %>
+                    <br>
+                 <img  src="<%= pais.imagenP%>"  width="300" height="200">
+                 <br><br>
+                </li>
+            <% }) %>       
+        </ol>
+</div>   
+<div class = "ecosistema" style="float:right;">
+    <h1>Fauna</h1>
+        <ol>
+            <% animales.forEach(function(animal){ %>
+                <li style="font-size: large;"
+                ><%= animal.nombreA %>
+                <br>
+                <img  src="<%= animal.imagenA%>"  width="300" height="200">
+                <br><br>
+            </li>
+            <% }) %>
+        </ol>
+       
+    <h1>Flora</h1>
+        <ol>
+            <% flores.forEach(function(flor){ %>
+                <li style="font-size: large;">
+                    <%= flor.nombreF %>
+                    <br>
+                 <img  src="<%= flor.imagenF%>"  width="300" height="200">
+                 <br><br>
+                </li>
+            <% }) %>
+        </ol>
+</div>
+</body>

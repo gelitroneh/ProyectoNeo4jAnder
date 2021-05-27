@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <!--CSS-->
+        <link rel="stylesheet" href="CSS/main.css">
+        <style>
+        html, body {
+            font: 16pt arial;
+            
+        }
+        #viz {
+            width: 1110px;
+            height: 840px;
+            border: 1px solid black;
+            font: 22pt arial;
+            background-color: white;
+        }
+        </style>
+
+        <%- include('./partials/head'); %>
+ </head>
+
+ <body class="container"> 
+    <style>
+        body{
+            background: rgb(58,180,97);
+            background: linear-gradient(90deg, rgba(58,180,97,1) 0%, rgba(29,150,253,1) 50%, rgba(252,176,69,1) 100%);
+        }
+    </style> 
+
+<header>
+    <%- include('./partials/header'); %>
+</header>
+
+<!--Representacion del grafo-->
+<script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+
+   <script type="text/javascript">
+   var viz;
+        function draw(){
+            var config={
+                container_id:"viz",
+
+                //Conexion en entorno local
+                //server_url:"bolt://localhost:7687",
+
+                //Conexion con docker
+                server_url:"bolt://localhost:1001",
+
+                server_user:"neo4j",
+                server_password:"password",
+                labels:{
+                    "Pais":{
+                        caption:"nombreP",
+                        size:"pagerank",
+                        //Asigna el color definido a los nodos
+                        nombreP:"nombreP",   
+                    },
+                    "Continente":{
+                        caption:"nombreC",
+                         size:"size",
+                        //Asigna el color definido a los nodos
+                        nombreC:"nombreC",  
+                    },
+                    "Fauna":{
+                        caption:"nombreA",
+                        size:"pagerank",
+                        //Asigna el color definido a los nodos
+                        nombreA:"nombreA",     
+                    },
+                    "Flora":{
+                        caption:"nombreF",
+                        size:"pagerank",
+                        //Asigna el color definido a los nodos
+                        nombreF:"nombreF",
+                    },
+                },
+                relationships:{
+                    "FRONTERA":{
+                        caption:false,
+                        //thickness:"count",
+                        FRONTERA:"FRONTERA",
+                    },
+                    "HABITA":{
+                        caption:false,
+                        thickness:"count",
+                        HABITA:"HABITA",
+                    },
+                    "CONTIENE":{
+                        caption:false,
+                        //thickness:"count",
+                        CONTIENE:"CONTIENE",
+                    },
+                    "FLORECE":{
+                        caption:false,
+                        thickness:"count",
+                        FLORECE:"FLORECE",
+                    },
+                },
+                initial_cypher:"MATCH p=()-[]->() RETURN p LIMIT 100",
+               
+            }
+            viz = new NeoVis.default(config);
+            viz.render();
+        }
+    </script>
+    <body onload="draw()">
+        <div id="viz"></div>
+    </body>
+  
+
+   

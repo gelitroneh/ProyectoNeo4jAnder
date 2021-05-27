@@ -1,0 +1,29 @@
+body{
+    background: rgb(58,180,97);
+    background: linear-gradient(90deg, rgba(58,180,97,1) 0%, rgba(29,150,253,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.jumbotron{
+    background-color:#8A2BE2;
+    text-align:center;
+}
+
+footer{
+    text-emphasis-color: green;
+}
+
+.ubicaciones{
+    float: left;
+}
+
+.ecosistema{
+    float:right;
+}
+
+.crear{
+    float:left;
+}
+
+.borrar{
+    float:right;
+}
