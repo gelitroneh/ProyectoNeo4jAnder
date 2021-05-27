@@ -13,9 +13,9 @@ Para el despliegue del proyecto se ha utilizado docker pero si se desea correr s
 
 3-Ejecutar el comando "docker-compose build"
 
-3-Ejecutar el comando "docker compose up"
+4-Ejecutar el comando "docker compose up"
 
-4-Los puertos son los siguientes:
+5-Los puertos son los siguientes:
 
 -5000 para el proyecto
 
@@ -23,7 +23,7 @@ Para el despliegue del proyecto se ha utilizado docker pero si se desea correr s
 
 -1001 para la conexion
 
-5-Situarse en el localhost:5000 para ver el proyecto
+6-Situarse en el localhost:5000 para ver el proyecto
 
 
 -------------DE FORMA LOCAL-------------
