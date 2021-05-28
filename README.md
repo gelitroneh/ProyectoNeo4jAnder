@@ -23,6 +23,8 @@ Para el despliegue del proyecto se ha utilizado docker pero si se desea correr s
 
 -1001 para la conexion
 
+-El usuario administrador de la base de datos es neo4j y su contraseña es password
+
 6-Situarse en el localhost:5000 para ver el proyecto
 
 
